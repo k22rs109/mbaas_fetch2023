@@ -46,11 +46,11 @@
             let TestClass = ncmb.DataStore("FetchTest");
             TestClass.fetchAll()
             .then(function(results){
-                var msg = "";
+                var msg = "<table><tr><th>message</th><th>Updata Date</th></tr>";
                 for(var i = 0; i < results.length; i++){
                     var data = results[i].get("text");
                     var update = results[i].get("updateDate");
-                    msg += data + ";" + update + "<br>";
+                    msg += "<tr><td>"+data+"</td><td>"+update+"</td></tr>";
                 }
                 $("#message").html(msg);
                 
